@@ -1,7 +1,7 @@
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
-from .. import models,schemas
-from .. hashing import Hash
+from blog import models,schemas
+from blog.hashing import Hash
 from passlib.context import CryptContext
 
 
