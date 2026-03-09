@@ -8,7 +8,7 @@ from passlib.context import CryptContext
 # pwd_cxt = CryptContext(schemes=["bcrypt"],deprecated="auto")
 
 def create(request: schemas.User, db:Session):
-    hashedPassword = Hash.hash(request.password)
+    hashedPassword = Hash.bcrypt(request.password)
     new_user = models.User(name=request.name, email=request.email,password=Hash.bcrypt(request.password))
     db.add(new_user)
     db.commit()
